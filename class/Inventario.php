@@ -35,7 +35,7 @@ class Inventario{
 
     public function removerItem($item): void{
         foreach($this->itens as $index=> $item ){
-            if($item->getNome()===$nome){
+            if($item->getNome()===$item){
                 unset($this->itens[$index]);
                 break;
             }
