@@ -23,4 +23,24 @@ class Inventario{
         }
     }
 
+    public function adcionarItem(Item $item): bool{
+        if(empty($item)){
+            return false;
+        } else{
+            $this->itens[]=$item;
+            return true;
+
+        }
+    }
+
+    public function removerItem($item): void{
+        foreach($this->itens as $index=> $item ){
+            if($item->getNome()===$nome){
+                unset($this->itens[$index]);
+                break;
+            }
+        }
+        
+    }
+
 }
