@@ -27,5 +27,16 @@ class Player {
         }
     }
 
-    public function getNivel(): string
+    public function getNivel(): int {
+        return $this-> nivel;
+    }
+
+    public function setNivel(int $nivel): void{
+        if($nivel = <=0){
+            $this -> nivel = "Invalido";
+        } else {
+            $this -> nivel = $nivel;
+        }
+    }
+    
 }
