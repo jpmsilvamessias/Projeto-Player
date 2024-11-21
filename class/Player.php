@@ -38,5 +38,5 @@ class Player {
             $this -> nivel = $nivel;
         }
     }
-    
+
 }
