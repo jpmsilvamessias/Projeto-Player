@@ -39,4 +39,12 @@ class Player {
         }
     }
 
+    public function coletarItem(Item $item): bool{
+        if(empty($item)){
+            return false;
+        } else {
+           $this-> itens [] = $item;
+        }
+    } 
+
 }
