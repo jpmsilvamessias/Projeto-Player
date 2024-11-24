@@ -39,4 +39,21 @@ class Player {
         }
     }
 
+    public function coletarItem(Item $item): bool{
+        if(empty($item)){
+            return false;
+        } else {
+           $this-> itens [] = $item;
+        }
+    } 
+
+    public function soltarItem(Item $item): bool {
+        foreach($this->itens as $index=> $item){
+            if($this->item getNome()===$item){
+                unset($this->itens[$index])
+                break;
+            }
+        }
+    }   
+
 }
