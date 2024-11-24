@@ -2,6 +2,7 @@
 
 require_once('Item.php');
 
+
 class Inventario{
     private int $capacidadeMaxima;
     private array $itens;
@@ -10,7 +11,7 @@ class Inventario{
         $this->capacidadeMaxima=20;
         $this->itens=[];
     }
-    public function adcionarItem(Item $item): bool{
+    public function adcionar(Item $item): bool{
         if(empty($item)){
             return false;
         } else{
@@ -20,9 +21,9 @@ class Inventario{
         }
     }
 
-    public function removerItem($item): void{
+    public function remover($item): void{
         foreach($this->itens as $index=> $item ){
-            if($item->getNome()===$item){
+            if($item->getNome()==$item){
                 unset($this->itens[$index]);
                 break;
             }
