@@ -30,7 +30,7 @@ class Inventario {
     }
 
     public function capacidadeLivre(): int {
-        $usado = 0;
+        $emuso = 0;
         foreach ($this->itens as $item) {
             $usado += $item->getTamanho(); 
         }
