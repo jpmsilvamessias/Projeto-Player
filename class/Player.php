@@ -47,4 +47,13 @@ class Player {
         }
     } 
 
+    public function soltarItem(Item $item): bool {
+        foreach($this->itens as $index=> $item){
+            if($this->item getNome()===$item){
+                unset($this->itens[$index])
+                break;
+            }
+        }
+    }   
+
 }
