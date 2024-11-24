@@ -49,11 +49,18 @@ class Player {
 
     public function soltarItem(Item $item): bool {
         foreach($this->itens as $index=> $item){
-            if($this->item getNome()===$item){
-                unset($this->itens[$index])
+            if($this->item->getNome()===$item){
+                unset($this->itens[$index]);
                 break;
             }
         }
     }   
+
+    public function subirNivel():bool{
+        $aumentar=$this->nivel+1;
+        $capacidadeNova=$aumentar*3;
+        $this->capacidadeMaxima+$capacidadeNova;
+
+    }
 
 }
