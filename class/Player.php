@@ -4,64 +4,62 @@ require_once('Item.php');
 require_once('Inventario.php');
 
 class Player {
-
     private string $nickname;
     private int $nivel;
     private Inventario $inventario;
+    
 
-    public function __construct($nickname,$nivel){
+    public function __construct($nickname, $nivel) {
         $this->setNickname($nickname);
         $this->setNivel($nivel);
+        $this->itens = []; 
     }
 
-
-    public function getNickname(): string{
-        return $this-> nickName;
+    public function getNickname(): string {
+        return $this->nickname; 
     }
 
-    public function setNickname(string $nickname): void{
-        if(empty($nickName)){
-            $this-> nickName = "Invalido";
+    public function setNickname(string $nickname): void {
+        if (empty($nickname)) {
+            $this->nickname = "Invalido"; 
         } else {
-            $this-> nickName = $nickName;
+            $this->nickname = $nickname;
         }
     }
 
     public function getNivel(): int {
-        return $this-> nivel;
+        return $this->nivel;
     }
 
-    public function setNivel(int $nivel): void{
-        if($nivel <=0){
-            $this -> nivel = "Invalido";
+    public function setNivel(int $nivel): void {
+        if ($nivel <= 0) {
+            $this->nivel = 1; 
         } else {
-            $this -> nivel = $nivel;
+            $this->nivel = $nivel;
         }
     }
 
-    public function coletarItem(Item $item): bool{
-        if(empty($item)){
+    public function coletarItem(Item $item): bool {
+        if (empty($item)) {
             return false;
         } else {
-           $this-> itens [] = $item;
-           return true;
+            $this->itens[] = $item; 
+            return true;
         }
-    } 
-
-    public function soltarItem(Item $item): bool {
-        foreach($this->itens as $index=> $item){
-            if($this->item->getNome()===$item){
-                unset($this->itens[$index]);
-                break;
-            }
-        }
-    }   
-
-    public function subirNivel():bool{
-        $aumentar=$this->nivel+1;
-        $capacidadeNova=$aumentar*3;
-        $this->capacidadeMaxima+$capacidadeNova;
-
     }
 
+    public function soltarItem(Item $item): bool {
+        foreach ($this->itens as $index => $objeto) {
+            if ($objeto->getNome() === $item->getNome()) { 
+                unset($this->itens[$index]);
+                return true; 
+            }
+        }
+        return false; 
+    }
+
+    public function subirNivel(): bool {
+        $this->nivel++;
+        return true; 
+    }
 }
