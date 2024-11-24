@@ -2,7 +2,7 @@
 
 require_once('Item.php');
 
-class Inventario {
+class Item {
     private int $capacidadeMaxima;
     private array $itens;
 
