@@ -12,7 +12,7 @@ class Inventario{
         $this->capacidadeMaxima=20;
         $this->itens=[];
     }
-    public function adcionar(Item $item): bool{
+    public function adicionar(Item $item): bool{
         if(empty($item)){
             return false;
         } else{

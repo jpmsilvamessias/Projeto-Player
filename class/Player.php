@@ -9,7 +9,7 @@ class Player {
     private int $nivel;
     private Inventario $inventario;
 
-    public function __construct(){
+    public function __construct($nickname,$nivel){
         $this->setNickname($nickname);
         $this->setNivel($nivel);
     }
@@ -44,6 +44,7 @@ class Player {
             return false;
         } else {
            $this-> itens [] = $item;
+           return true;
         }
     } 
 
