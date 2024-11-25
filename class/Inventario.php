@@ -1,9 +1,6 @@
 <?php
 
 require_once('Item.php');
-
-
-
 class Inventario{
     private int $capacidadeMaxima;
     private array $itens;

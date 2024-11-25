@@ -7,10 +7,8 @@ require_once('./class/Magia.php');
 require_once('./class/Inventario.php');
 require_once('./class/Player.php');
 
-
-
 $item1 = new Ataque("Espada Longa", 5, "Ataque");
-$item2 = new Defesa("Escudo Grande", 8, "Defesa");
+$item2 = new Defesa("Escudo Grande", 7, "Defesa");
 $item3 = new Magia("Bola de Fogo", 3, "Magia");
 
 
@@ -22,7 +20,7 @@ $inventario->adicionar($item2);
 $inventario->adicionar($item3);
 
 
-$player = new Player("Jogador1", 10);
+$player = new Player("Jogador1", 1);
 
 $player->coletarItem($item1);
 $player->coletarItem($item2);
@@ -38,6 +36,17 @@ echo "Capacidade Livre no Inventário:  {$inventario->capacidadeLivre()}";
 $player->soltarItem($item2);
 
 echo "Após soltar o item, Capacidade Livre: {$inventario->capacidadeLivre()}";
+
+
+
+
+
+
+
+
+
+
+
 
 
 

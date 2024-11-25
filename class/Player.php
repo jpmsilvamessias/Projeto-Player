@@ -12,7 +12,7 @@ class Player {
     public function __construct($nickname, $nivel) {
         $this->setNickname($nickname);
         $this->setNivel($nivel);
-        $this->itens = []; 
+        
     }
 
     public function getNickname(): string {
@@ -58,8 +58,11 @@ class Player {
         return false; 
     }
 
-    public function subirNivel(): bool {
-        $this->nivel++;
-        return true; 
+    public function subirNivel(): int{
+        $novoNivel=$this->nivel+=1;
+        $novaCapacidade=$novoNivel*3;
+         $novaCapacidade+$this->capacidadeMaxima;
+         return $this->capacidadeMaxima;
     }
 }
+
