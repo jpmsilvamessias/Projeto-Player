@@ -11,8 +11,8 @@ class Player {
     public function __construct($nickname, $nivel) {
         $this->setNickname($nickname);
         $this->setNivel($nivel);
-        $this->inventario=new Inventario(); 
-        
+        $this->inventario = new Inventario(); 
+        $this->inventario->setCapacidadeMaxima(20 + ($nivel * 3));  
     }
 
     public function getNickname(): string {
@@ -33,7 +33,7 @@ class Player {
 
     public function setNivel(int $nivel): void {
         if ($nivel <= 0) {
-            $this->nivel = "invalido"; 
+            $this->nivel = 1; 
         } else {
             $this->nivel = $nivel;
         }
@@ -50,7 +50,7 @@ class Player {
 
     public function soltarItem(Item $item): bool {
         foreach ($this->itens as $index => $objeto) {
-            if ($objeto->getNome() ==$item->getNome()) { 
+            if ($objeto->getNome() == $item->getNome()) { 
                 unset($this->itens[$index]);
                 return true; 
             }
@@ -59,14 +59,13 @@ class Player {
     }
 
     public function subirNivel(): void {
-        $this->nivel=$this->nivel+1;
+        $this->nivel = $this->nivel + 1;
         $aumento = $this->nivel * 3;
         $novaCapacidade = $this->inventario->getCapacidadeMaxima() + $aumento;
-        $this->inventario->setCapacidadeMaxima($novaCapacidade);
+        $this->inventario->setCapacidadeMaxima($novaCapacidade);  
     }
 
     public function getInventario(): Inventario {
         return $this->inventario;
     }
-
 }
