@@ -1,5 +1,4 @@
 <?php
-<?php
 
 class Item {
     private string $nome;
