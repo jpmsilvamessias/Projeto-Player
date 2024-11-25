@@ -32,12 +32,12 @@ class Inventario{
         
     }
 
-    public function capacidadeLivre(): bool{
-        foreach($this->capacidademaxima as $index=>$item){
-            $this->capacidademaxima -=$item->getTamanho();
-            
+        public function capacidadeLivre(): int {
+            $ocupado = 0;
+            foreach ($this->itens as $item) {
+                $ocupado += $item->getTamanho(); 
+            }     
+            return $this->capacidadeMaxima - $ocupado;
         }
-
-    }
 
 }

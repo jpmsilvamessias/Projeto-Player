@@ -28,16 +28,16 @@ $player->coletarItem($item1);
 $player->coletarItem($item2);
 $player->coletarItem($item3);
 
-echo "Nickname: " . $player->getNickname();
-echo "Nível: " . $player->getNivel();
+echo "Nickname:  {$player->getNickname()}";
+echo "Nível:  {$player->getNivel()}";
 
 
-echo "Capacidade Livre no Inventário: " . $inventario->capacidadeLivre();
+echo "Capacidade Livre no Inventário:  {$inventario->capacidadeLivre()}";
 
 
 $player->soltarItem($item2);
 
-echo "Após soltar o item, Capacidade Livre: " . $inventario->capacidadeLivre();
-?>
+echo "Após soltar o item, Capacidade Livre: {$inventario->capacidadeLivre()}";
+
 
 

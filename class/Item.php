@@ -29,7 +29,7 @@ class Item {
 
     public function setTamanho(int $tamanho): void {
         if ($tamanho <= 0) {
-            $this->tamanho = 1; // Corrigido valor inválido.
+            $this->tamanho = "invalido"; 
         } else {
             $this->tamanho = $tamanho;
         }
