@@ -1,39 +1,52 @@
 <?php
+<?php
 
-require_once('Item.php');
+class Item {
+    private string $nome;
+    private int $tamanho;
+    private string $classe;
 
-class Inventario {
-    private int $capacidadeMaxima;
-    private array $itens;
-
-    public function __construct() {
-        $this->capacidadeMaxima = 20; 
-        $this->itens = [];
+    public function __construct($nome, $tamanho, $classe) {
+        $this->setNome($nome);
+        $this->setTamanho($tamanho);
+        $this->setClasse($classe);
     }
 
-    public function adicionar(Item $item): bool {
-        if (empty($item)) {
-            return false;
+    public function getNome(): string {
+        return $this->nome;
+    }
+
+    public function setNome(string $nome): void {
+        if (empty($nome)) {
+            $this->nome = "Invalido";
         } else {
-            $this->itens[] = $item;
-            return true;
+            $this->nome = $nome;
         }
     }
 
-    public function remover($item): void {
-        foreach ($this->itens as $index => $objeto) {
-            if ($objeto->getNome() === $item->getNome()) { 
-                unset($this->itens[$index]);
-                break;
-            }
+    public function getTamanho(): int {
+        return $this->tamanho;
+    }
+
+    public function setTamanho(int $tamanho): void {
+        if ($tamanho <= 0) {
+            $this->tamanho = 1; // Corrigido valor inválido.
+        } else {
+            $this->tamanho = $tamanho;
         }
     }
 
-    public function capacidadeLivre(): int {
-        $emuso = 0;
-        foreach ($this->itens as $item) {
-            $usado += $item->getTamanho(); 
+    public function getClasse(): string {
+        return $this->classe;
+    }
+
+    public function setClasse(string $classe): void {
+        if (empty($classe)) {
+            $this->classe = "Invalido";
+        } else {
+            $this->classe = $classe;
         }
-        return $this->capacidadeMaxima - $usado;
     }
 }
+
+
