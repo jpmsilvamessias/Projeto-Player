@@ -59,7 +59,7 @@ class Player {
     }
 
     public function subirNivel(): void {
-        $this->nivel=$this->$nivel+1;
+        $this->nivel=$this->nivel+1;
         $aumento = $this->nivel * 3;
         $novaCapacidade = $this->inventario->getCapacidadeMaxima() + $aumento;
         $this->inventario->setCapacidadeMaxima($novaCapacidade);
