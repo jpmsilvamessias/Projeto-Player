@@ -7,37 +7,21 @@ require_once('./class/Magia.php');
 require_once('./class/Inventario.php');
 require_once('./class/Player.php');
 
-$item1 = new Ataque("Espada Longa", 5, "Ataque");
-$item2 = new Defesa("Escudo Grande", 7, "Defesa");
-$item3 = new Magia("Bola de Fogo", 3, "Magia");
-
-
-$inventario = new Inventario();
-
-
-$inventario->adicionar($item1);
-$inventario->adicionar($item2);
-$inventario->adicionar($item3);
-
-
 $player = new Player("Jogador1", 1);
 
-$player->coletarItem($item1);
-$player->coletarItem($item2);
-$player->coletarItem($item3);
+// Nível inicial e capacidade inicial
+echo "Nível: " . $player->getNivel() . "\n"; // Nível: 1
+echo "Capacidade: " . $player->getInventario()->getCapacidadeMaxima() . "\n"; // Capacidade: 20
 
-echo "Nickname:  {$player->getNickname()}";
-echo "Nível:  {$player->getNivel()}";
+// Subindo para nível 2
+$player->subirNivel();
+echo "Nível: " . $player->getNivel() . "\n"; // Nível: 2
+echo "Capacidade: " . $player->getInventario()->getCapacidadeMaxima() . "\n"; 
 
-
-echo "Capacidade Livre no Inventário:  {$inventario->capacidadeLivre()}";
-
-
-$player->soltarItem($item2);
-
-echo "Após soltar o item, Capacidade Livre: {$inventario->capacidadeLivre()}";
-
-
+// Subindo para nível 3
+$player->subirNivel();
+echo "Nível: " . $player->getNivel() . "\n"; // Nível: 3
+echo "Capacidade: " . $player->getInventario()->getCapacidadeMaxima() . "\n";
 
 
 

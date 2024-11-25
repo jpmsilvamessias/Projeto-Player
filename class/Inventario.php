@@ -1,14 +1,26 @@
 <?php
 
 require_once('Item.php');
-class Inventario{
-    private int $capacidadeMaxima;
-    private array $itens;
 
-    public function  __construct(){
-        $this->capacidadeMaxima=20;
-        $this->itens=[];
-    }
+    class Inventario {
+        private int $capacidadeMaxima;
+        private array $itens;
+
+      public function __construct() {
+            $this->capacidadeMaxima = 20; 
+            $this->itens = [];
+        }
+    
+        public function getCapacidadeMaxima(): int {
+            return $this->capacidadeMaxima; 
+        }
+    
+        public function setCapacidadeMaxima(int $capacidadeMaxima): void {
+            $this->capacidadeMaxima = $capacidadeMaxima;
+        }
+    
+    
+
     public function adicionar(Item $item): bool{
         if(empty($item)){
             return false;
