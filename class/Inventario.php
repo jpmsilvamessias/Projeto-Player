@@ -14,7 +14,7 @@ class Inventario {
     public function getCapacidadeMaxima(): int {
         return $this->capacidadeMaxima;
     }
-    
+
     public function setCapacidadeMaxima(int $capacidadeMaxima): void {
         $this->capacidadeMaxima = $capacidadeMaxima;
     }
@@ -46,6 +46,10 @@ class Inventario {
                 $ocupado += $item->getTamanho(); 
             }     
             return $this->capacidadeMaxima - $ocupado;
+        }
+
+        public function getItens(): array {
+            return $this->itens;
         }
 
 }

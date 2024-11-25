@@ -9,7 +9,7 @@ require_once('./class/Player.php');
 
 
 // Criar os itens (dois itens de cada categoria, como exemplo)
-$item1 = new Item("Espada", 5,"ataque");  // Nome e tamanho
+$item1 = new Ataque("Espada", 5,"ataque");  // Nome e tamanho
 $item2 = new Item("Escudo", 3,"defesa");
 
 $item3 = new Item("Poção", 2,"Magia");
