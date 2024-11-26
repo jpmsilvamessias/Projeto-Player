@@ -44,14 +44,16 @@ class Player {
     }
 
     public function coletarItem(Item $item): bool {
-        if ($this->inventario->adcionar($item)) {
-            echo "item adcionado com sucesso";
-            return true;
-        } else {
-             echo "item nao fora adcionado inventario cheio";
-         return false;
+        foreach ($this->inventario->getItens() as $itemInventario) {
+            if ($itemInventario->getNome() == $item->getNome()) {
+                return true;
+            } else {
+                return false;
+           } 
         }
     }
+    
+    
 
     public function soltarItem(Item $item): bool {
         foreach ($this->itens as $index => $objeto) {

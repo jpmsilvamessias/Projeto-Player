@@ -27,18 +27,39 @@ echo "jogador {$player1->getNickName()}, subiu de nivel para {$player1->getNivel
 
 echo "Nova capacidade Maxima{$player1->getInventario()->getCapacidadeMaxima()}<br>";
 
-$player2= new Player("link",2);
+ echo'<br>';
+
+$player2= new Player("link",1);
 $item2= new Ataque('Master sword',7,'ataque');
-$item3= new magia('Cajado' ,2 ,'magia');
+$item3= new Magia('Cajado' ,2 ,'magia');
 $item4= new Defesa('Escudo',4,'Defesa');
+$item5= new Ataque('Machado',7,'ataque');
+$item6= new Magia('Bola de fogop',2,'magia');
+echo "<br>";
+$item7= new Ataque('espada gigante',7,'ataque');
+$item8= new Magia ('oraculo',2,'magia');
 
+$player2->getInventario()->adicionar($item2);
+$player2->getInventario()->adicionar($item3);
+$player2->getInventario()->adicionar($item4);
+$player2->getInventario()->adicionar($item5);
+$player2->getInventario()->adicionar($item6);
+$player2->getInventario()->adicionar($item7);
+$player2->getInventario()->adicionar($item8);
+ 
+echo "inventario atual do jogador {$player2->getNickname()}<br>";
+echo "capacidade maxima atual{$player2->getInventario()->getCapacidadeMaxima()}<br>";
+echo "capacidade livre atual {$player2->getInventario()->capacidadeLivre()}<br>";
+echo "itens no inventario<br>";
+foreach ($player2->getInventario()->getItens() as $item) {
+    echo " Nome {$item->getNome()}  Tamanho: {$item->getTamanho()}<br>";
+}
 
+$player2->esvaziarInventario();
 
-
-
-
-
-
+if (empty($player2->getInventario()->getItens())) {
+    echo "O inventário está vazio.";
+}
 
 
 

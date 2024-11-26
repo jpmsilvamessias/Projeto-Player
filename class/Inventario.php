@@ -22,6 +22,7 @@ class Inventario {
 
     public function adicionar(Item $item): bool{
         if($item->getTamanho()> $this->capacidadeLivre()){
+           echo "item nao pode ser adcionado {$item->getNome()} <br>";
             return false;
         } else{
             $this->itens[]=$item;
