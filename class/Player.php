@@ -15,6 +15,10 @@ class Player {
         $this->inventario->setCapacidadeMaxima(20 + ($nivel * 3));  
     }
 
+    public function getInventario(): Inventario {
+        return $this->inventario;
+    }
+
     public function getNickname(): string {
         return $this->nickname; 
     }
@@ -40,11 +44,12 @@ class Player {
     }
 
     public function coletarItem(Item $item): bool {
-        if (empty($item)) {
-            return false;
-        } else {
-            $this->itens[] = $item; 
+        if ($this->inventario->adcionar($item)) {
+            echo "item adcionado com sucesso";
             return true;
+        } else {
+             echo "item nao fora adcionado inventario cheio";
+         return false;
         }
     }
 
@@ -65,7 +70,9 @@ class Player {
         $this->inventario->setCapacidadeMaxima($novaCapacidade);  
     }
 
-    public function getInventario(): Inventario {
-        return $this->inventario;
+    public function esvaziarInventario(): string{
+        $this->inventario->esvaziar();
+       return "Inventario vazio";
     }
+
 }

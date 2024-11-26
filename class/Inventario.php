@@ -21,7 +21,7 @@ class Inventario {
 
 
     public function adicionar(Item $item): bool{
-        if(empty($item)){
+        if($item->getTamanho()> $this->capacidadeLivre()){
             return false;
         } else{
             $this->itens[]=$item;
@@ -51,5 +51,11 @@ class Inventario {
         public function getItens(): array {
             return $this->itens;
         }
+
+        public function esvaziar():void{
+            $this->itens=[];
+    
+        }
+    
 
 }
