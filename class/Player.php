@@ -14,6 +14,18 @@ class Player {
         $this->inventario = new Inventario(); 
         $this->inventario->setCapacidadeMaxima(20 + ($nivel * 3));  
     }
+ 
+public function getNivel(): int{
+        return $this->nivel;
+    }
+
+public function setNivel( int $nivel): void{
+        if($nivel >1){
+            $this->nivel="invalido so pode ser nivel1 ";
+        } else{
+            $this->nivel=$nivel;
+        }
+    }
 
     public function getInventario(): Inventario {
         return $this->inventario;
@@ -22,6 +34,7 @@ class Player {
     public function getNickname(): string {
         return $this->nickname; 
     }
+
 
     public function setNickname(string $nickname): void {
         if (empty($nickname)) {
