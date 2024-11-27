@@ -49,8 +49,11 @@ class Inventario {
             return $this->capacidadeMaxima - $ocupado;
         }
 
-        public function getItens(): array {
+        public function listar(): array {
             return $this->itens;
+        }
+        public function aumentarCapacidade(int $valor): void {
+            $this->capacidadeMaxima += $valor;
         }
 
         public function esvaziar():void{

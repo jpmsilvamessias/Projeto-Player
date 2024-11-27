@@ -18,7 +18,7 @@ echo "inventario atual do jogador {$player1->getNickname()}<br>";
 echo "capacidade maxima atual{$player1->getInventario()->getCapacidadeMaxima()}<br>";
 echo "capacidade livre atual{$player1->getInventario()->capacidadeLivre()}<br>";
 echo "itens no inventario<br>";
-foreach ($player1->getInventario()->getItens() as $item) {
+foreach ($player1->getInventario()->listar() as $item) {
     echo " Nome {$item->getNome()}  Tamanho: {$item->getTamanho()}<br>";
 }
 
@@ -51,13 +51,13 @@ echo "inventario atual do jogador {$player2->getNickname()}<br>";
 echo "capacidade maxima atual{$player2->getInventario()->getCapacidadeMaxima()}<br>";
 echo "capacidade livre atual {$player2->getInventario()->capacidadeLivre()}<br>";
 echo "itens no inventario<br>";
-foreach ($player2->getInventario()->getItens() as $item) {
+foreach ($player2->getInventario()->listar() as $item) {
     echo " Nome {$item->getNome()}  Tamanho: {$item->getTamanho()}<br>";
 }
 
 $player2->esvaziarInventario();
 
-if (empty($player2->getInventario()->getItens())) {
+if (empty($player2->getInventario()->listar())) {
     echo "O inventário está vazio.";
 }
 
