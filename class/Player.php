@@ -60,9 +60,10 @@ class Player {
             if ($objeto->getNome() == $item->getNome()) { 
                 unset($this->itens[$index]);
                 return true; 
+            } else{
+                return false; 
             }
         }
-        return false; 
     }
 
     public function subirNivel(): void {
