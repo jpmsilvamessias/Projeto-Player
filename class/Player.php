@@ -37,7 +37,7 @@ class Player {
 
     public function setNivel(int $nivel): void {
         if ($nivel <= 0) {
-            $this->nivel = 1; 
+            $this->nivel = "invalido"; 
         } else {
             $this->nivel = $nivel;
         }
