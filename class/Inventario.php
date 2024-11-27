@@ -14,12 +14,6 @@ class Inventario {
     public function getCapacidadeMaxima(): int {
         return $this->capacidadeMaxima;
     }
-
-    public function setCapacidadeMaxima(int $capacidadeMaxima): void {
-        $this->capacidadeMaxima = $capacidadeMaxima;
-    }
-
-
     public function adicionar(Item $item): bool{
         if($item->getTamanho()> $this->capacidadeLivre()){
            echo "item nao pode ser adcionado {$item->getNome()} <br>";
