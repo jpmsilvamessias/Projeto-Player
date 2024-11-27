@@ -10,7 +10,7 @@ class Player {
 
     public function __construct($nickname, $nivel) {
         $this->setNickname($nickname);
-        $this->setNivel($nivel);
+        $this->setNivel(1);
         $this->inventario = new Inventario(); 
         $this->inventario->setCapacidadeMaxima(20 + ($nivel * 3));  
     }
@@ -30,19 +30,6 @@ class Player {
             $this->nickname = $nickname;
         }
     }
-
-    public function getNivel(): int {
-        return $this->nivel;
-    }
-
-    public function setNivel(int $nivel): void {
-        if ($nivel <= 0) {
-            $this->nivel = "invalido"; 
-        } else {
-            $this->nivel = $nivel;
-        }
-    }
-
     public function coletarItem(Item $item): bool {
         foreach ($this->inventario->listar() as $itemInventario) {
             if ($itemInventario->getNome() == $item->getNome()) {
