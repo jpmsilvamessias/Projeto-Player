@@ -8,9 +8,9 @@ require_once('./class/Inventario.php');
 require_once('./class/Player.php');
 
 
-$player1= new Player("darlk",1);
+$player1= new Player("darlk");
 
-$item1= new Ataque('Espada',7,'ataque');
+$item1= new Ataque('Espada');
 
 $player1->getInventario()->adicionar($item1);
 
@@ -30,17 +30,17 @@ echo "Nova capacidade Maxima{$player1->getInventario()->getCapacidadeMaxima()}<b
 
 echo'<br>';
 
-$player2= new Player("link",1);
-$item2= new Ataque('Master sword',7,'ataque');
-$item3= new Magia('Cajado' ,2 ,'magia');
-$item4= new Defesa('Escudo',4,'Defesa');
-$item5= new Ataque('Machado',7,'ataque');
-$item6= new Magia('Bola de fogo',2,'magia');
+$player2= new Player("link");
+$item2= new Ataque('Master sword');
+$item3= new Magia('Cajado');
+$item4= new Defesa('Escudo',);
+$item5= new Ataque('Machado');
+$item6= new Magia('Bola de fogo');
 
 echo "<br>";
 
-$item7= new Ataque('Espada gigante',7,'ataque');
-$item8= new Magia ('Oraculo',2,'magia');
+$item7= new Ataque('Espada gigante');
+$item8= new Magia ('Oraculo');
 
 $player2->getInventario()->adicionar($item2);
 $player2->getInventario()->adicionar($item3);
@@ -64,8 +64,3 @@ $player2->esvaziarInventario();
 if (empty($player2->getInventario()->listar())) {
     echo "O inventário está vazio.";
 }
-
-
-
-
-
