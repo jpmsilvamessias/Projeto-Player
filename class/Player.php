@@ -10,7 +10,7 @@ class Player {
 
     public function __construct($nickname, $nivel) {
         $this->setNickname($nickname);
-        $this->setNivel(1);
+        $this->setNivel($nivel);
         $this->inventario = new Inventario(); 
         $this->inventario->setCapacidadeMaxima(20 + ($nivel * 3));  
     }
