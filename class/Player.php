@@ -45,7 +45,7 @@ class Player {
 
     public function soltarItem(Item $item): bool {
         foreach ($this->itens as $index => $objeto) {
-            if ($objeto->getNome() == $item->getNome()) { 
+            if ($objeto->getNome() === $item->getNome()) { 
                 unset($this->itens[$index]);
                 return true; 
             } else{
