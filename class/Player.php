@@ -33,7 +33,7 @@ class Player {
     }
     public function coletarItem(Item $item): bool {
         foreach ($this->inventario->listar() as $itemInventario) {
-            if ($itemInventario->getNome() == $item->getNome()) {
+            if ($itemInventario->getNome() === $item->getNome()) {
                 return true;
             } else {
                 return false;
